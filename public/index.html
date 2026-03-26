@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suresh Chandra - Android Application Developer</title>
+    <meta name="description" content="Android Application Developer with 3+ years of experience in Kotlin, Java, Android Jetpack, hardware SDK integrations, and Play Store deployments.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div id="root" style="display: none;"></div>
+    <!-- Contact Form Popup Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-container">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="modal-body-wide">
+                    <!-- Left Zone: Service Showcase -->
+                    <div class="modal-left-zone">
+                        <div class="modal-showcase-header">
+                            <div class="showcase-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h2>What I Build</h2>
+                            <p>Specialized expertise across the Android product ecosystem</p>
+                        </div>
+                        
+                        <div class="services-showcase">
+                            <!-- Native Android Apps -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Native Android Apps</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Kotlin</span>
+                                        <span class="tech-badge">Jetpack</span>
+                                        <span class="tech-badge">MVVM</span>
+                                        <span class="tech-badge">Compose</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Hardware SDK -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-fingerprint"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Hardware SDK</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Fingerprint</span>
+                                        <span class="tech-badge">Iris</span>
+                                        <span class="tech-badge">Printer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Realtime Data -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Realtime Data</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Retrofit</span>
+                                        <span class="tech-badge">Firebase</span>
+                                        <span class="tech-badge">WorkManager</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Offline & Security -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Offline & Security</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Room</span>
+                                        <span class="tech-badge">Encryption</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Performance -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Performance & Release</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Profiling</span>
+                                        <span class="tech-badge">Crashlytics</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Consulting -->
+                            <div class="showcase-item">
+                                <div class="showcase-item-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="showcase-item-content">
+                                    <h4>Product Consulting</h4>
+                                    <div class="tech-stack">
+                                        <span class="tech-badge">Discovery</span>
+                                        <span class="tech-badge">Mentoring</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="showcase-footer">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>3+ Years</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>6+ Enterprise Apps</span>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-smile"></i>
+                                <span>Multiple happy partners</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Zone: Contact Form -->
+                    <div class="modal-right-zone">
+                        <div class="modal-form-header">
+                            <div class="form-header-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h2>Let's Connect!</h2>
+                            <p>Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+                        </div>
+                        
+                        <form class="contact-form" id="contactFormModal">
+                            <div class="form-group">
+                                <label for="modal-name">
+                                    <i class="fas fa-user"></i>
+                                    Your Name
+                                </label>
+                                <input type="text" id="modal-name" name="name" placeholder="John Doe" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="modal-email">
+                                    <i class="fas fa-envelope"></i>
+                                    Your Email
+                                </label>
+                                <input type="email" id="modal-email" name="email" placeholder="john@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="modal-message">
+                                    <i class="fas fa-comment"></i>
+                                    Message
+                                </label>
+                                <textarea id="modal-message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            
+                            <p class="modal-note">
+                                <i class="fas fa-lock"></i>
+                                Your information is secure and will not be shared.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <span class="brand-name">Suresh Chandra</span>
+                    <span class="brand-subtitle">Android Application Developer</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-primary" id="openContactModal">Hire Me</button>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span>
+                    Available for Android mandates
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Suresh Chandra</span>
+                </h1>
+                <h2 class="hero-subtitle">Android Application Developer</h2>
+                <p class="hero-description">
+                    I design and ship secure enterprise and consumer Android apps with Kotlin, Java, and Jetpack. 
+                    My focus is on MVVM/Clean Architecture, real-time Firebase sync, and deep hardware SDK integrations 
+                    for biometrics, scanners, and printers.
+                </p>
+                
+                <div class="hero-stats">
+                   <div class="stat-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>3+ Years</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>6+ Enterprise Apps</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-play"></i>
+                        <span>4 Play Store Releases</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                    <a href="#projects" class="btn-secondary btn-lg">
+                        <i class="fas fa-briefcase"></i>
+                        View Work
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:csuresh073@gmail.com" target="_blank" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/suresh165" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/suresh-chandra-082722108/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What I Offer</span>
+                <h2 class="section-title">My Services</h2>
+                <p class="section-subtitle">Specialized expertise to bring your ideas to life</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1: Native Android Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Native Android Development</h3>
+                    <p class="service-description">
+                        Kotlin and Java based Android apps engineered with MVVM, Jetpack components, and Clean Architecture.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Jetpack (Navigation, Room, WorkManager)</li>
+                        <li><i class="fas fa-check"></i> Modular MVVM/Clean Architecture</li>
+                        <li><i class="fas fa-check"></i> Modern UI with Material 3</li>
+                        <li><i class="fas fa-check"></i> Automated unit & UI tests</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Enterprise-ready builds delivered faster</span>
+                    </div>
+                </div>
+
+                <!-- Service 2: Hardware SDK Integrations -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3 class="service-title">Hardware & SDK Integrations</h3>
+                    <p class="service-description">
+                        Seamless integration of fingerprint, iris, QR, printer, and thermal devices for secure field operations.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> SecuGen & iris biometrics</li>
+                        <li><i class="fas fa-check"></i> QR/Barcode & camera pipelines</li>
+                        <li><i class="fas fa-check"></i> Bluetooth / network printers</li>
+                        <li><i class="fas fa-check"></i> Encrypted device communication</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Reliable hardware workflows for field teams</span>
+                    </div>
+                </div>
+
+                <!-- Service 3: Realtime Data & Firebase -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="service-title">Realtime Data & Firebase</h3>
+                    <p class="service-description">
+                        Secure REST and Firebase integrations that keep enterprise data in sync online and offline.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Retrofit/OKHttp API layers</li>
+                        <li><i class="fas fa-check"></i> Firebase Auth, Firestore, FCM</li>
+                        <li><i class="fas fa-check"></i> Background sync with WorkManager</li>
+                        <li><i class="fas fa-check"></i> Secure data encryption & caching</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>30% faster sync & fewer crashes</span>
+                    </div>
+                </div>
+
+                <!-- Service 4: Offline & Data Security -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Offline & Data Security</h3>
+                    <p class="service-description">
+                        Robust caching, encryption, and audit-ready workflows for finance, attendance, and compliance apps.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Room/SQLite offline-first data</li>
+                        <li><i class="fas fa-check"></i> Encrypted prefs & secure storage</li>
+                        <li><i class="fas fa-check"></i> Role-based access & biometrics</li>
+                        <li><i class="fas fa-check"></i> PDF/printable reports</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Zero data loss in field deployments</span>
+                    </div>
+                </div>
+
+                <!-- Service 5: Performance & Release Optimization -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="service-title">Performance & Release Optimization</h3>
+                    <p class="service-description">
+                        Profiling, crash-free releases, and Play Store readiness with CI/CD pipelines and QA automation.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> ANR/crash diagnostics</li>
+                        <li><i class="fas fa-check"></i> Play Console compliance</li>
+                        <li><i class="fas fa-check"></i> Automated testing suites</li>
+                        <li><i class="fas fa-check"></i> Release management & monitoring</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>30% drop in crashes per release</span>
+                    </div>
+                </div>
+
+                <!-- Service 6: Product Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-title">Product Consulting & Enablement</h3>
+                    <p class="service-description">
+                        Partnering with founders and IT heads to scope Android roadmaps, groom backlogs, and mentor teams.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Requirement discovery workshops</li>
+                        <li><i class="fas fa-check"></i> Architecture & security reviews</li>
+                        <li><i class="fas fa-check"></i> Sprint planning & Agile ceremonies</li>
+                        <li><i class="fas fa-check"></i> Knowledge transfer & documentation</li>
+                    </ul>
+                    <div class="service-outcome">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Aligned stakeholders & faster launches</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="services-cta">
+                <h3>Ready to start your project?</h3>
+                <p>Let's discuss how I can help bring your ideas to life</p>
+                <button class="btn-primary btn-lg" id="openContactModalFromServices">
+                    <i class="fas fa-rocket"></i>
+                    Let's Work Together
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Passionate developer focused on creating impactful solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">
+                        Android Application Developer with <strong>3+ years of experience</strong> building biometric-enabled, 
+                        offline-first enterprise apps and Play Store releases. I specialize in crafting secure MVVM/Clean Architecture 
+                        solutions with Kotlin, Jetpack, Firebase, and custom device SDKs that improve productivity for on-ground teams.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Modern Android Architecture</h4>
+                                <p>MVVM, Clean Architecture, Jetpack components, Coroutines, and dependency injection (Hilt/Dagger)</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Hardware Integrations</h4>
+                                <p>Biometric scanners, QR/Barcode cameras, thermal & label printers, cash drawers, and POS peripherals</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Performance & Reliability</h4>
+                                <p>Reduced API latency and crash rates by ~30% through optimized networking and database layers</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h4>Product Delivery</h4>
+                                <p>End-to-end delivery from discovery to Play Store launch with Agile ceremonies and stakeholder demos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <div class="info-card">
+                        <h3>Quick Info</h3>
+                        <ul class="info-list">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Location:</strong> Aligarh, Uttar Pradesh, India</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-briefcase"></i>
+                                <span><strong>Experience:</strong> 3+ Years</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap"></i>
+                                <span><strong>Education:</strong> MCA (2022), BCA (2021)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-code"></i>
+                                <span><strong>Specialization:</strong> Android Application Development</span>
+                            </li>
+                        </ul>
+                        <a href="assets/Suresh_Chandra_Resume.pdf" class="btn-primary btn-block" download>Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">Building innovative solutions across different companies</p>
+            </div>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3>Android Application Developer</h3>
+                                <h4>Autocratic Technosoft Pvt. Ltd.</h4>
+                                <div class="experience-meta">
+                                    <span class="duration">
+                                        <i class="fas fa-calendar"></i>
+                                        Sep 2022 - Present
+                                    </span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Aligarh, India
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="company-badge current-badge">Current</span>
+                        </div>
+                        <p class="experience-description">
+                            Lead Android engineer for biometric-enabled enterprise apps powering attendance, compliance, and 
+                            field productivity. Own architecture, code reviews, and Play Store releases while mentoring junior devs.
+                        </p>
+                        <div class="achievements">
+                            <h5>Highlighted Impact</h5>
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h6><i class="fas fa-user-shield"></i> Secure Hardware Integrations</h6>
+                                    <span class="badge success">Production</span>
+                                </div>
+                                <ul>
+                                    <li>Integrated fingerprint, iris, QR, label printer, and thermal printer SDKs within MVVM modules</li>
+                                    <li>Implemented encrypted data pipelines and secure network communication</li>
+                                    <li>Reduced authentication latency and crash counts by <strong>~30%</strong></li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Kotlin</span>
+                                    <span class="tech-tag">Hilt</span>
+                                    <span class="tech-tag">Room</span>
+                                    <span class="tech-tag">SecuGen SDK</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h6><i class="fas fa-cloud"></i> Firebase & API Modernization</h6>
+                                    <span class="badge success">Production</span>
+                                </div>
+                                <ul>
+                                    <li>Built Retrofit-based API layer with WorkManager sync for real-time enterprise data</li>
+                                    <li>Integrated Firebase Auth, Firestore, FCM, and analytics for live operations</li>
+                                    <li>Delivered resilient offline-first data access using Room and encrypted storage</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Retrofit</span>
+                                    <span class="tech-tag">Room</span>
+                                    <span class="tech-tag">WorkManager</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h6><i class="fas fa-store"></i> Play Store Releases</h6>
+                                    <span class="badge success">Live</span>
+                                </div>
+                                <ul>
+                                    <li>Published Maxfort Employee, Ronak Scientific, and DailyExpense apps for enterprise clients</li>
+                                    <li>Set up CI/CD, QA automation, and store listing compliance for ongoing updates</li>
+                                    <li>Improved crash-free sessions through proactive monitoring and profiling</li>
+                                </ul>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Play Console</span>
+                                    <span class="tech-tag">CI/CD</span>
+                                    <span class="tech-tag">Firebase Crashlytics</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3>Independent Android Projects</h3>
+                                <h4>Freelance & Academic Engagements</h4>
+                                <div class="experience-meta">
+                                    <span class="duration">
+                                        <i class="fas fa-calendar"></i>
+                                        Jan 2020 - Aug 2022
+                                    </span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Mathura / Remote
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achievements">
+                            <ul>
+                                <li>Delivered Android prototypes for local businesses covering inventory, expense, and employee workflows</li>
+                                <li>Collaborated with faculty and peers to implement Kotlin best practices and rigorous code reviews</li>
+                                <li>Built PDF generation, QR validations, and background sync utilities reused across later products</li>
+                                <li>Mentored classmates on Git, Agile rituals, and preparing Play Store-ready assets</li>
+                            </ul>
+                            <br />
+                            <div class="tech-tags">
+                                <span class="tech-tag">Kotlin</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">SQLite</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <div class="experience-info">
+                                <h3>Frontend Developer</h3>
+                                <h4>Infinite Careers Pvt. Ltd.</h4>
+                                <div class="experience-meta">
+                                    <span class="duration">
+                                        <i class="fas fa-calendar"></i>
+                                        Jun 2020 - May 2021
+                                    </span>
+                                    <span class="location">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        Bengaluru, Karnataka
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="achievements">
+                            <ul>
+                                <li>Developed responsive web applications using React.js and modern CSS frameworks</li>
+                                <li>Implemented RESTful API integrations for seamless data flow</li>
+                                <li>Collaborated with design team to ensure pixel-perfect UI implementation</li>
+                                <li>Optimized application performance resulting in faster load times</li>
+                            </ul>
+                            <br />
+                            <div class="tech-tags">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work and side projects</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-title-area">
+                                <h3>Maxfort Employee App</h3>
+                                <p class="project-tagline">Enterprise leave and attendance platform featuring QR-based gate passes, admin approvals, and biometric validations.</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.atpl.Maxfort_Employee" class="project-link" title="Play Store" target="_blank">
+                                    <i class="fab fa-google-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">MVVM</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">QR Scanner</span>
+                            <span class="tech-tag">Room</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-user-check"></i> Automated approvals & gate passes</span>
+                            <span><i class="fas fa-sync"></i> Real-time sync + offline queue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-title-area">
+                                <h3>Ronak Scientific App</h3>
+                                <p class="project-tagline">Customer onboarding and authorization workflow with secure documents, multi-level approvals, and admin dashboards.</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.atpl.ronakscientific" class="project-link" title="Play Store" target="_blank">
+                                    <i class="fab fa-google-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Clean Architecture</span>
+                            <span class="tech-tag">Retrofit</span>
+                            <span class="tech-tag">Firebase Auth</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-lock"></i> Secure multi-step onboarding</span>
+                            <span><i class="fas fa-tasks"></i> Role-based workflows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-title-area">
+                                <h3>DailyExpense</h3>
+                                <p class="project-tagline">Personal finance tracker with debit/credit ledger, PDF exports, and printable statements for SMB owners.</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://play.google.com/store/apps/details?id=com.susoft.dailytaskupdate" class="project-link" title="Play Store" target="_blank">
+                                    <i class="fab fa-google-play"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Room</span>
+                            <span class="tech-tag">PDF</span>
+                            <span class="tech-tag">Printer SDK</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-file-pdf"></i> Instant PDF & printouts</span>
+                            <span><i class="fas fa-wallet"></i> Offline-first ledger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-title-area">
+                                <h3>Biometric Device Toolkit</h3>
+                                <p class="project-tagline">Reusable Android libraries wrapping OEM SDKs for fingerprint, iris, QR, printer, and cash drawer devices with unified APIs.</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="mailto:csuresh073@gmail.com" class="project-link" title="Request Demo">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Modular SDK</span>
+                            <span class="tech-tag">CameraX</span>
+                            <span class="tech-tag">Bluetooth</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-plug"></i> Single API across devices</span>
+                            <span><i class="fas fa-headset"></i> Faster integrations for new teams</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Technical Expertise</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">Tools and technologies I work with</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Kotlin</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">XML / JSON</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">C / C++ basics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Android Frameworks & UI</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Android Jetpack</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Jetpack Compose / Views</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Material Design 3</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CameraX & Vision</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> Data & Cloud Services</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Retrofit / REST APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firebase Suite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">WorkManager & Coroutines</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GraphQL / REST consumption</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Data Stores</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">Room / SQLite</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Firestore & Realtime DB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Local Cache / Preferences</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Android Studio</span>
+                        <span class="skill-tag">Git / GitHub</span>
+                        <span class="skill-tag">Gradle</span>
+                        <span class="skill-tag">Firebase Crashlytics</span>
+                        <span class="skill-tag">Play Console</span>
+                        <span class="skill-tag">Postman</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Jira / Agile</span>
+                        <span class="skill-tag">Figma Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">My academic journey and qualifications</p>
+            </div>
+            
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <h3>Master of Computer Applications (MCA)</h3>
+                                <h4>Sanskriti University, Mathura</h4>
+                            </div>
+                            <span class="education-badge completed">Completed</span>
+                        </div>
+                        <p class="education-period">
+                            <i class="fas fa-calendar-alt"></i>
+                            2021 - 2022
+                        </p>
+                        <p class="education-description">
+                            Specialized in Android application development, software engineering, and modern data management practices.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
+                        <div class="education-header">
+                            <div>
+                                <h3>Bachelor of Computer Applications (BCA)</h3>
+                                <h4>Bon Maharaj Institutions, Mathura</h4>
+                            </div>
+                            <span class="education-badge completed">Completed</span>
+                        </div>
+                        <p class="education-period">
+                            <i class="fas fa-calendar-alt"></i>
+                            2019 - 2021
+                        </p>
+                        <p class="education-description">
+                            Built strong fundamentals in programming, database design, and problem solving while delivering early Android prototypes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="section-subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Info Side -->
+                <div class="contact-left">
+                    <div class="contact-intro">
+                        <h3>Need an Android specialist?</h3>
+                        <p>Let's plan your next Android release&mdash;biometric field apps, consumer launches, or SDK integrations. I can embed with your engineering team or lead a focused sprint.</p>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon email-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email Me</h4>
+                                <p>csuresh073@gmail.com</p>
+                                <a href="mailto:csuresh073@gmail.com" class="method-link">Send an email &rarr;</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon phone-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Call Me</h4>
+                                <p>+91 87553 23795</p>
+                                <a href="tel:+918755323795" class="method-link">Give me a call &rarr;</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon location-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Location</h4>
+                                <p>Aligarh, Uttar Pradesh</p>
+                                <p class="text-muted">India</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h4>Connect with me</h4>
+                        <div class="social-buttons">
+                            <a href="https://github.com/suresh165" class="social-btn github-btn" title="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/suresh-chandra-082722108/" class="social-btn linkedin-btn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form Side -->
+                <div class="contact-right">
+                    <div class="contact-form-wrapper">
+                        <div class="form-header">
+                            <h3>Send me a message</h3>
+                            <p>Fill out the form below and I'll get back to you within 24 hours</p>
+                        </div>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <i class="fas fa-user"></i>
+                                        Your Name
+                                    </label>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i class="fas fa-envelope"></i>
+                                        Your Email
+                                    </label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">
+                                    <i class="fas fa-tag"></i>
+                                    Subject
+                                </label>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">
+                                    <i class="fas fa-comment"></i>
+                                    Message
+                                </label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Suresh Chandra</h3>
+                    <p>Android Application Developer focused on Kotlin, Jetpack, and secure biometric-enabled experiences.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/suresh165" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/suresh-chandra-082722108/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:csuresh073@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Suresh Chandra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="scripts/analytics.js?v=2"></script>
+    <script src="scripts/main.js?v=11"></script>
+</body>
+</html>
