@@ -3,6 +3,7 @@
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
     const RECIPIENT_EMAIL = 'csuresh073@gmail.com';
     const FORM_SUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`;
 
@@ -75,6 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
         );
         window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${subject}&body=${body}`;
     }
+=======
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
     
     // ==========================================
     // CONTACT FORM POPUP MODAL
@@ -124,9 +127,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle modal contact form submission
     if (contactFormModal) {
         contactFormModal.addEventListener('submit', async function(e) {
+<<<<<<< HEAD
             if (contactFormModal.dataset.nativeSubmit === 'true') {
                 return;
             }
+=======
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
             e.preventDefault();
             
             // Get the submit button
@@ -142,6 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = new FormData(contactFormModal);
                 const data = Object.fromEntries(formData);
                 
+<<<<<<< HEAD
                 const errors = validateContactData(data, false);
                 if (errors.length) {
                     throw new Error(errors[0]);
@@ -151,6 +158,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     await sendEmailToInbox(data, 'Hire Me Popup');
                 } catch (sendError) {
                     openMailtoFallback(data, 'Hire Me Popup');
+=======
+                // Send to Google Sheets using analytics.js function
+                if (typeof window.submitContactForm === 'function') {
+                    await window.submitContactForm(data);
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
                 }
                 
                 // Show success message in modal
@@ -166,7 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
             } catch (error) {
                 console.error('Error submitting form:', error);
+<<<<<<< HEAD
                 showModalErrorMessage(error.message);
+=======
+                showModalErrorMessage();
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
             } finally {
                 // Re-enable button
                 submitBtn.disabled = false;
@@ -205,7 +221,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Show error message in modal
+<<<<<<< HEAD
     function showModalErrorMessage(customMessage) {
+=======
+    function showModalErrorMessage() {
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
         const message = document.createElement('div');
         message.className = 'form-message error-message';
         message.innerHTML = `
@@ -213,7 +233,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fas fa-exclamation-circle"></i>
                 <div>
                     <h4>Something went wrong!</h4>
+<<<<<<< HEAD
                     <p>${customMessage || `Please try again or contact me directly at ${RECIPIENT_EMAIL}`}</p>
+=======
+                    <p>Please try again or contact me directly at dineshkumar@example.com</p>
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
                 </div>
             </div>
         `;
@@ -440,9 +464,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
+<<<<<<< HEAD
             if (contactForm.dataset.nativeSubmit === 'true') {
                 return;
             }
+=======
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
             e.preventDefault();
             
             // Get the submit button
@@ -458,6 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
                 
+<<<<<<< HEAD
                 const errors = validateContactData(data, true);
                 if (errors.length) {
                     throw new Error(errors[0]);
@@ -467,6 +495,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     await sendEmailToInbox(data, 'Contact Section');
                 } catch (sendError) {
                     openMailtoFallback(data, 'Contact Section');
+=======
+                // Send to Google Sheets using analytics.js function
+                if (typeof window.submitContactForm === 'function') {
+                    await window.submitContactForm(data);
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
                 }
                 
                 // Show success message
@@ -477,7 +510,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
             } catch (error) {
                 console.error('Error submitting form:', error);
+<<<<<<< HEAD
                 showErrorMessage(error.message);
+=======
+                showErrorMessage();
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
             } finally {
                 // Re-enable button
                 submitBtn.disabled = false;
@@ -522,7 +559,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Show error message
+<<<<<<< HEAD
     function showErrorMessage(customMessage) {
+=======
+    function showErrorMessage() {
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
         const message = document.createElement('div');
         message.className = 'form-message error-message';
         message.innerHTML = `
@@ -530,7 +571,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fas fa-exclamation-circle"></i>
                 <div>
                     <h4>Something went wrong!</h4>
+<<<<<<< HEAD
                     <p>${customMessage || `Please try again or contact me directly at ${RECIPIENT_EMAIL}`}</p>
+=======
+                    <p>Please try again or contact me directly at dineshkumar@example.com</p>
+>>>>>>> a60471219d5506c2623ea6f8fa08eb530db7ab86
                 </div>
             </div>
         `;
