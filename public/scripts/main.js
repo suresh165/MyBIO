@@ -3,6 +3,78 @@
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    const RECIPIENT_EMAIL = 'csuresh073@gmail.com';
+    const FORM_SUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`;
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    }
+
+    function validateContactData(data, requireSubject = false) {
+        const errors = [];
+
+        if (!data.name || data.name.trim().length < 2) {
+            errors.push('Please enter a valid name.');
+        }
+        if (!data.email || !isValidEmail(data.email.trim())) {
+            errors.push('Please enter a valid email address.');
+        }
+        if (requireSubject && (!data.subject || data.subject.trim().length < 1)) {
+            errors.push('Please enter a subject.');
+        }
+        if (!data.message || data.message.trim().length < 1) {
+            errors.push('Please enter your message.');
+        }
+
+        return errors;
+    }
+
+    async function sendEmailToInbox(data, source) {
+        const payload = {
+            name: data.name.trim(),
+            email: data.email.trim(),
+            subject: (data.subject || `New inquiry from ${source}`).trim(),
+            message: data.message.trim(),
+            _subject: `Portfolio Contact (${source}) - ${data.name.trim()}`,
+            _captcha: 'false',
+            _template: 'table'
+        };
+
+        try {
+            const response = await fetch(FORM_SUBMIT_ENDPOINT, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json().catch(() => ({}));
+            if (response.ok && (result.success === true || result.success === 'true')) {
+                return;
+            }
+        } catch (error) {
+            console.warn('Primary email send failed, trying fallback...', error);
+        }
+
+        // Fallback: send as classic form post (no-cors) for better compatibility.
+        const fallbackBody = new URLSearchParams(payload);
+        await fetch(`https://formsubmit.co/${RECIPIENT_EMAIL}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: fallbackBody.toString(),
+            mode: 'no-cors'
+        });
+    }
+
+    function openMailtoFallback(data, source) {
+        const subject = encodeURIComponent((data.subject || `New inquiry from ${source}`).trim());
+        const body = encodeURIComponent(
+            `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+        );
+        window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${subject}&body=${body}`;
+    }
     
     // ==========================================
     // CONTACT FORM POPUP MODAL
@@ -52,6 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle modal contact form submission
     if (contactFormModal) {
         contactFormModal.addEventListener('submit', async function(e) {
+            if (contactFormModal.dataset.nativeSubmit === 'true') {
+                return;
+            }
             e.preventDefault();
             
             // Get the submit button
@@ -67,9 +142,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = new FormData(contactFormModal);
                 const data = Object.fromEntries(formData);
                 
-                // Send to Google Sheets using analytics.js function
-                if (typeof window.submitContactForm === 'function') {
-                    await window.submitContactForm(data);
+                const errors = validateContactData(data, false);
+                if (errors.length) {
+                    throw new Error(errors[0]);
+                }
+
+                try {
+                    await sendEmailToInbox(data, 'Hire Me Popup');
+                } catch (sendError) {
+                    openMailtoFallback(data, 'Hire Me Popup');
                 }
                 
                 // Show success message in modal
@@ -85,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
             } catch (error) {
                 console.error('Error submitting form:', error);
-                showModalErrorMessage();
+                showModalErrorMessage(error.message);
             } finally {
                 // Re-enable button
                 submitBtn.disabled = false;
@@ -124,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Show error message in modal
-    function showModalErrorMessage() {
+    function showModalErrorMessage(customMessage) {
         const message = document.createElement('div');
         message.className = 'form-message error-message';
         message.innerHTML = `
@@ -132,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fas fa-exclamation-circle"></i>
                 <div>
                     <h4>Something went wrong!</h4>
-                    <p>Please try again or contact me directly at dineshkumar@example.com</p>
+                    <p>${customMessage || `Please try again or contact me directly at ${RECIPIENT_EMAIL}`}</p>
                 </div>
             </div>
         `;
@@ -359,6 +440,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
+            if (contactForm.dataset.nativeSubmit === 'true') {
+                return;
+            }
             e.preventDefault();
             
             // Get the submit button
@@ -374,9 +458,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = new FormData(contactForm);
                 const data = Object.fromEntries(formData);
                 
-                // Send to Google Sheets using analytics.js function
-                if (typeof window.submitContactForm === 'function') {
-                    await window.submitContactForm(data);
+                const errors = validateContactData(data, true);
+                if (errors.length) {
+                    throw new Error(errors[0]);
+                }
+
+                try {
+                    await sendEmailToInbox(data, 'Contact Section');
+                } catch (sendError) {
+                    openMailtoFallback(data, 'Contact Section');
                 }
                 
                 // Show success message
@@ -387,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
             } catch (error) {
                 console.error('Error submitting form:', error);
-                showErrorMessage();
+                showErrorMessage(error.message);
             } finally {
                 // Re-enable button
                 submitBtn.disabled = false;
@@ -432,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Show error message
-    function showErrorMessage() {
+    function showErrorMessage(customMessage) {
         const message = document.createElement('div');
         message.className = 'form-message error-message';
         message.innerHTML = `
@@ -440,7 +530,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <i class="fas fa-exclamation-circle"></i>
                 <div>
                     <h4>Something went wrong!</h4>
-                    <p>Please try again or contact me directly at dineshkumar@example.com</p>
+                    <p>${customMessage || `Please try again or contact me directly at ${RECIPIENT_EMAIL}`}</p>
                 </div>
             </div>
         `;
